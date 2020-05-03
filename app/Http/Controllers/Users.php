@@ -32,8 +32,10 @@ class Users extends Controller
     
     public function submit(Request $request)
     {
-           print_r($request->input());
+        //    print_r($request->input());
         // return $request->input();
+        $request->validate(['user'=>'required']); 
+
     }
 
 
