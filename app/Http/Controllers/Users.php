@@ -32,9 +32,9 @@ class Users extends Controller
     
     public function submit(Request $request)
     {
-        //    print_r($request->input());
+        $request->validate(['user'=>'required','phone'=>'required|min:10|max:10','password'=>'required|min:6|max:8']); 
+        print_r($request->input());
         // return $request->input();
-        $request->validate(['user'=>'required']); 
 
     }
 
