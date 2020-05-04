@@ -39,5 +39,6 @@ Route::post('register','Users@register');
 
 Route::get('db','Users@dbCheck'); 
 
-
 Route::get('checkJoin','Users@checkJoin'); 
+
+Route::get('check_modal','Users@check_modal'); 

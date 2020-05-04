@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use  App\User;
+
 class Users extends Controller
 {
     
@@ -85,6 +87,12 @@ class Users extends Controller
         print_r($result); 
         echo "\n";
         return $result; 
+    }
+
+    public function  check_modal()
+    {
+        return User::all();
+        // return User::find(2);
     }
 
 
