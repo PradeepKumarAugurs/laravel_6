@@ -80,6 +80,7 @@ class Users extends Controller
         $result=DB::table('user')
         ->select('company.name','user.email')
         ->join('company','user.id','company.user_id')
+        ->where('company.name','Samsung')
         ->get();
         print_r($result); 
         echo "\n";
