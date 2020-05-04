@@ -80,8 +80,13 @@
             @endif
 
             <div class="content">
+                @if(Session::has('success'))
+                <b style="color:green;" >
+                 {{Session::get('success')}}
+                </b>
+                @endif
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel In Hindi 
                 </div>
                 <a href="youtube">Click Go to  youtube Page </a>
                 <div class="links">

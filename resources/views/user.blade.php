@@ -6,12 +6,14 @@
     <title>Users</title>
 </head>
 <body>
-
-   <!--  <ul>
+   
+   @if(!empty($errors->all()))
+    <ul>
     @foreach($errors->all() as $row)
-    <li>{{$row}}</li>
+    <li style="color:red;">{{$row}}</li>
     @endforeach
-    </ul> -->
+    </ul>
+    @endif
 
     <form action="usercontroller" method="post">
     @csrf
@@ -22,7 +24,7 @@
        <input type="text" name="password" id="password" placeholder="password" >
        <br/>
        @error('password')
-        <span>{{$message}}</span>
+        <span style="color:red;">{{$message}}</span>
        @enderror
        <br/><br/>
        <button type="submit">submit</button>
