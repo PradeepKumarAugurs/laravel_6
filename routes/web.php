@@ -42,3 +42,7 @@ Route::get('db','Users@dbCheck');
 Route::get('checkJoin','Users@checkJoin'); 
 
 Route::get('check_modal','Users@check_modal'); 
+
+Route::get('list','Users@companies_list'); 
+
+Route::get('sendmail','Users@sendmail');

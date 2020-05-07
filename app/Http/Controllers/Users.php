@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use  App\User;
+use Mail;
 
 class Users extends Controller
 {
@@ -93,6 +94,24 @@ class Users extends Controller
     {
         return User::all();
         // return User::find(2);
+    }
+
+    // pagination  list 
+    public  function  companies_list()
+    {
+         $companies_list=DB::table('company')->paginate(3);
+         return view('companies',['companies_list'=>$companies_list]);
+    }
+
+    public  function  sendmail()
+    {
+        $to_name='Pradeep'; //  anshukanoujia@gmail.com
+        $to_email='pk1105806@gmail.com';
+        $data=array('name'=>'Pradeep ','body'=>'This  is  Test  Message');
+        $responce=Mail::send('mail',$data,function($message) use ($to_name,$to_email){
+            $message->to($to_email)->subject("Test  Laravel  Subject "); 
+        }); 
+        echo 'mail Send  Successfully For ';
     }
 
 
